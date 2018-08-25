@@ -23,14 +23,24 @@ class ActionsVC: UIViewController {
     //MARK: - Actions Button
     
     @IBAction func goPee(_ sender: UIButton) {
+        if player.health < 70 {
         do{
             try realm.write {
                 player.healthIncrease(min: 3, max: 8)
                 player.hungryLose(min: 5, max: 15)
+                player.moneyChanged = 0
                 player.messageStatus = 2
             }
         } catch{
             print("Error saving \(error)")
+            }} else {
+            do{
+                try realm.write {
+                    player.messageStatus = 16
+                }
+            } catch{
+                print("Error saving \(error)")
+            }
         }
         dismiss(animated: true, completion: nil)
     }
@@ -40,6 +50,7 @@ class ActionsVC: UIViewController {
             try realm.write {
                 player.hungryLose(min: 10, max: 20)
                 player.moneyIncrease(min: 7, max: 20)
+                player.healthChanged = 0
                 player.messageStatus = 3
             }
         } catch{
@@ -49,27 +60,52 @@ class ActionsVC: UIViewController {
     }
     
     @IBAction func askForMoney(_ sender: UIButton) {
+        if player.money > 20{
         do{
             try realm.write {
                 player.hungryLose(min: 15, max: 24)
                 player.moneyIncrease(min: 10, max: 20)
+                player.healthChanged = 0
                 player.messageStatus = 4
             }
         } catch{
             print("Error saving \(error)")
+            }} else {
+            do{
+                try realm.write {
+                    player.hungryIncrease(min: 10, max: 15)
+                    player.moneyChanged = 0
+                    player.healthChanged = 0
+                    player.messageStatus = 17
+                }
+            } catch{
+                print("Error saving \(error)")
+            }
         }
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func goSleep(_ sender: UIButton) {
+        if player.health < 70{
         do{
             try realm.write {
                 player.health = 100
+                player.healthChanged = 100
+                player.moneyChanged = 0
                 player.hungryIncrease(min: 20, max: 30)
                 player.messageStatus = 5
             }
         } catch{
             print("Error saving \(error)")
+            }
+        } else {
+            do{
+                try realm.write {
+                    player.messageStatus = 18
+                }
+            } catch{
+                print("Error saving \(error)")
+            }
         }
         dismiss(animated: true, completion: nil)
     }
@@ -79,6 +115,7 @@ class ActionsVC: UIViewController {
             try realm.write {
                 player.hungryLose(min: 8, max: 20)
                 player.healthLose(min: 3, max: 8)
+                player.moneyChanged = 0
                 player.messageStatus = 6
             }
         } catch{
@@ -88,23 +125,38 @@ class ActionsVC: UIViewController {
     }
     
     @IBAction func goFight(_ sender: UIButton) {
+        if player.isArmored{
+            do{
+                try realm.write {
+                    player.isArmored = false
+                    player.moneyIncrease(min: 100, max: 300)
+                    player.healthChanged = 0
+                    player.hungryLose(min: 10, max: 20)
+                    player.messageStatus = 8
+                }
+            } catch{
+                print("Error saving \(error)")
+            }
+        } else{
         do{
             try realm.write {
                 player.healthLose(min: 30, max: 40)
                 player.moneyLoss(min: 30, max: 80)
+                player.hungryChanged = 0
                 player.messageStatus = 7
             }
         } catch{
             print("Error saving \(error)")
-        }
+            }}
         dismiss(animated: true, completion: nil)
     }
     
     @IBAction func goWork(_ sender: UIButton) {
         do{
             try realm.write {
-                player.healthLose(min: 30, max: 40)
-                player.moneyIncrease(min: 50, max: 100)
+                player.healthLose(min: 20, max: 30)
+                player.moneyIncrease(min: 80, max: 120)
+                player.hungryLose(min: 15, max: 25)
                 player.messageStatus = 9
             }
         } catch{

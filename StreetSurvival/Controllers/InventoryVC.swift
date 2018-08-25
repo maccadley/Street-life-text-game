@@ -60,6 +60,7 @@ class InventoryVC: UITableViewController {
             do{
                 try realm.write {
                     player.drinkBeer(min: 20, max: 30)
+                    player.moneyChanged = 0
                 }
             } catch{
                 print("Error saving \(error)")
@@ -68,6 +69,7 @@ class InventoryVC: UITableViewController {
             do{
                 try realm.write {
                     player.naftizinUsage(min: 10, max: 15)
+                    player.moneyChanged = 0
                 }
             } catch{
                 print("Error saving \(error)")
@@ -76,6 +78,9 @@ class InventoryVC: UITableViewController {
             do{
                 try realm.write {
                     player.stickArmor()
+                    player.healthChanged = 0
+                    player.hungryChanged = 0
+                    player.moneyChanged = 0
                 }
             } catch{
                 print("Error saving \(error)")
@@ -84,6 +89,7 @@ class InventoryVC: UITableViewController {
             do{
                 try realm.write {
                     player.shaurmaEaten(min: 25, max: 45)
+                    player.moneyChanged = 0
                 }
             } catch{
                 print("Error saving \(error)")

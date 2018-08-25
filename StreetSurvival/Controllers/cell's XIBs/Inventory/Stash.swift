@@ -15,16 +15,6 @@ class Stash : Object{
     @objc dynamic var desc : String = ""
     @objc dynamic var ammount : Int = 1
     
-  
-
-  //  var parentCategory = LinkingObjects(fromType: Player.self, property: "playerStash")
     var parentCategory = LinkingObjects(fromType: InventoryDataService.self, property: "inventory")
-//    init(itemName: String, description: String, ammountOfItem: Int){
-//        name = itemName
-//        desc = description
-//        ammount = ammountOfItem
-//    }
-//
- 
-  
+
 }

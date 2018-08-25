@@ -15,6 +15,7 @@ class ShopVC: UITableViewController {
     var inventory: Results<InventoryDataService>!
     override func viewDidLoad() {
         super.viewDidLoad()
+        player = realm.objects(Player.self).last!
         tableView.register(UINib(nibName: "ShopCellVS", bundle: nil), forCellReuseIdentifier: "itemCell")
         tableView.rowHeight = 110.0
     }
@@ -41,13 +42,30 @@ class ShopVC: UITableViewController {
         }
 }
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let newItem = Stash()
         let buyingItem = DataService.instance.getItems()[indexPath.row]
+        if player.money >= buyingItem.itemPrice{
+        let newItem = Stash()
         newItem.name = buyingItem.itemName
         newItem.desc = buyingItem.itemDesc
         newItem.imageName = buyingItem.image
         newItem.ammount = 1
-        buyItem(category: newItem)
+            do{
+                try realm.write {
+                    player.money -= buyingItem.itemPrice
+                }
+            } catch{
+                print("Error saving \(error)")
+            }
+        buyItem(category: newItem)}
+        else {
+            do{
+                try realm.write {
+                    player.messageStatus = 19
+                }
+            } catch{
+                print("Error saving \(error)")
+            }
+        }
         dismiss(animated: true, completion: nil)
     }
     
