@@ -12,45 +12,61 @@ class MessageBank {
     var listOfMessages = [Status]()
     
     init(){
-        //Старт игры индекс 0, 1
-        listOfMessages.append(Status(message: "Внезапно, появился неизвестный бомж, который пришел из-за города. Весь рваный, слегка пьяный, но полный решимости подняться на самый верх, достичь своего могущества, стать полноценным гражданином и предприниметелем. Самое первое что надо сделать - немного накопить денег. Деньги будут тратиться на поднятие здоровья, на алкоголь, на оружие и еду. В дальнейшем Вы должны будете купить паспорт и ГАЗель, чтобы стать предпринимателем. Игра закончиться как только Вы купите квартиру. Удачи!"))
-        listOfMessages.append(Status(message: "Вернувшись после невероятного (нет) приключения в реальной жизни, Вы вновь взяли судь одного бездомного в свои руки."))
-        //Кнопки действий 2-8. Индексы 8-9 привязаны к драке, в зависимости от наличия палки выпадает нужный индекс
+        //Game start index 0-1
+        listOfMessages.append(Status(message: "Suddenly, a unknown person entered the city. He's dirty, stinky and looks terrible, but he is sure to get over the city. The main goal is to earn money, and buy a small Truck. Money will be spent on health and hungry, and weapon also. The game is finished as you buy it. Good luck!"))
+        
+        listOfMessages.append(Status(message: "As you return from you interesting real life (not), the game is continue"))
+       
+        //Action buttons, 2-9. 8-9
         //2
-        listOfMessages.append(Status(message: "Находясь на людной улице, вам внезапно приспичило слить лишнее топливо. Не долго думая, Вы принимаетесь развязывать веревку у Вас на штанах, спускать первые штаны, затем копаясь с Вашей шубой, поднимая ее и доставая край вторых штанов, Вы уже чувствуете поступающую мочу. Завывая и бормоча \"Да бля, бля бля!\" Вы опускаете вторые штаны. Назло всему миру Ваши трусы также оказываются под краем шубы, и в тот момент пока Вы яростно оддергиваете шубу, Вы чувствуте теплую жидкость стекающую по вашим ногам. Пожав плечами и надеваете все обратно."))
+        listOfMessages.append(Status(message: "Walking down the street you felt very weak, and decided to take a rest for a while. You sat near some caffee, closed your eyes, and even started snoring. Suddenly, you felt cold and damp. You oppened your eyes and noticed it began to rain. Quite unpleasent, but what do you suppose to fell being on the street?"))
+        
         //3
-        listOfMessages.append(Status(message: "Помойка грязная (как Вы), и дурно пахнет (как ВЫ!), однако на самом дне, в луже чего то очень дурно пахнущего, вы находите пару монет, которую жадно кидаете себе в единственный целый носок, где хранятся Ваши накопления. Немного устав и проголодавшись Вы уже мечтаете побежать в ближайший ларек пропивать Ваши накопления."))
+        listOfMessages.append(Status(message: "The scapyard is dirty (like you) and smells awfull (Just like you). Anyway, you found a few coins on the bottom. It's surely will be spent on booz."))
+        
         //4
-        listOfMessages.append(Status(message: "Развалившись возле ближайшего перехода, и выставив перед собой свою лучшую шапку, Вы засыпаете. Сквозь сон Вы переодически слышите \"Пойдем быстрее\" и \"Фуу, кто тут здох??\". Глупцы, они не понимают всей важности ваших действий! Проснувшись от пинка проходящего мимо патруля, вы быстро собираете мелочь и убегаете прочь."))
+        listOfMessages.append(Status(message: "Walking down the street, suddenly you found out, that you don't have much money (what a surprise!). You decided to sit down and ask for some people's charity. You took off your hat, placed it in front of yourself, and write on some carton box's scrap \"Gimmy som many\", yeah, that would help. After a few hours, you felt like somebody kicked you, opened your eyes you saw a policeman that yelles at you. Gathering your belongings you go away."))
+        
         //5
-        listOfMessages.append(Status(message: "Медленно расхаживая по знакомому спальнику, вы замечаете знакомую теплотрассу. Вздохнув, вы располагаетесь на ней, подкладываете под голову свою сумку с ВАЖНЫМИ вещами, зеваете и засыпаете. Вам снятся огни города, рев машин, затем все это превращается в темное небо с яркими звездами. Вы как в океане звезд и космоса. Когда вы открываете глаза, вы обнаруживаете что рядом с Вами лежит собака, глодающая кусок кости. Что-ж, неплохой завтрак!"))
+        listOfMessages.append(Status(message: "Spending a whole day for IMPORTANT things, you feel sleepy. The best decision is to sleep somewhere. You saw a heating main, and it's look like a good bed for tonight! You put you bag with IMPORTANT things in it under your head and fell asleep. You dreamed about ocean of stars, wich turned into lights of night city. And as you fell into this ocean, for a second you felt it. But it turned out, that a homeless dog was licking your face. Looks loke this dog bring you some food, it's a bit of meat on bone. Nice breakfast"))
+        
         //6
-        listOfMessages.append(Status(message: "Прогуливаясь по своей территории, Вы внезапно замечаете двух маленьких черных чертей. Испытав сильный страх, Вы резко выставляете палец вперед и начинаете истошно орать. Прохожие испуганно смотрят на Вас, не видя никого в том направлении куда Вы указываете. Отчаявшись, Вы начинаете махать руками и переходите на визг. Внезапно все заканчивается сильной болью на Вашем затылке. \"Че орешь, блядь?\" - Говорит какой то мужик. От его удара черти куда то пропали, впрочем, никакой благодарности за спасение людей Вы также не получаете."))
+        listOfMessages.append(Status(message: "Walking around, suddenly you spot two lettle demons, jumping on roof. You started shaking, and felt fear. You sharply put your finger forward and start yelling furiously. Passers-by look fightened at you, and not seeing anyone in that direction where you point. Desperate, you start to wave you hands and go to a squeal. Suddenly, everithing ends in severe pain on your nape. \"Are you crazy?\" - Some guy asked. The demons desappeared, however, no one thanks you for saving people"))
+        
         //7
-        listOfMessages.append(Status(message: "Проходя мимо Вашей территоррии, Вы замечаете конкурирующего бомжа Степана. Не имея ничего в качестве оружия, Вы бросаетесь на недоброжелателя с голыми кулаками. Поскольку Степан заметил Вас - он успел нанести вам удар. Пока Вы катились по земле вереща \"УУУУУАААА\" из Вашего кармана выпало немного мелочи. Досадно..."))
+        listOfMessages.append(Status(message: "Moving near unknown places, you spoted your enemy - Stepan. As you don't have anything that could help you in your battle, you decided to fight with bare hands. Stepan is strong, and with only one hit, you fall back and roll lodly screeching. Some money fell off your bag. Sad..."))
+        
         //8
-        listOfMessages.append(Status(message: "Проходя по знакомым местам, вы ехидно поглядываете на проходящих мимо женщин (Хотя учитывая их возраст они даже Вам годятся в бабушки). Вдруг, Вы замечаете закомого Степана, он медленно тащит за собой тележку с ВАЖНЫМИ вещами. Он идет опустив глаза и бормоча \"Пидорасы... Пидорасы!\" вдруг он замечает Вас, и уже готовится шутя Вас побить. Но не тут то было! Ваша палка выглядит куда серьезнее Ваших кулаков. Вы с размаху наносите удар по наглой роже Степана, от чего он падает на свою тележку, попутно теряя свой башмак и роняя мелочь из карманов. Степан в ярости визжит \"УУУУУИИИИИИ\" и на четвереньках ретируется за гаражи. Вы неплохо поднялись! Драгоценная мелочь, немного ВАЖНЫХ вещей которые вы уже тащите в пункт приема металлалома и сломанная палка, которую пришлось выкинуть - вот все что вы получаете от этой битвы."))
+        listOfMessages.append(Status(message: "Moving through sadly-known places, you spoted your enemy - Stepan. He looks agnry, but he doesn't see you. With your super-battle stick, you run toward Stepan, swing your stick and strike him hard as you can. Stepan yelling \"AAAHHHHH\" with strong pain. He falling on his cart with his IMPORTANT stuff. As Stepan is scared to death, he run away from you. That was huge victory of your. You get Stepan's money, but you've broken your stick"))
+        
         //9
-        listOfMessages.append(Status(message: "Вы устроились на сутки поработать в охрану местного ТЦ. Неплохо-неплохо. Буквально через пару часов Вашей смены, какой то человек пытается украсть ершик для унитаза. Ваш зоркий глаз замечает это, и Вы решительно останавливаете негодяя. Вор бьет Вам в глаз, но роняет ершик. Начальник хвалит Вас, платит за выход на работу, но здоровье просто так не поправишь..."))
+        listOfMessages.append(Status(message: "You got a night job as a security guard in local store. Not so bad. Throught a couple of hours, you recientrly spoted a man, that trying to steal the brush for the toilet. Thanks to your sharp-sighted yey, you noticed that very quicly and you stoped a thief. he beats you in your eye and drops the brush. Your boss praises you, pays for your work, but health is lost, and it hard to restore..."))
+        
         //10 Death
-        listOfMessages.append(Status(message: "Вы жалко погибли от нехватки одного из важнейших ресурсов. Какая нелепость! Вы думали что быть бездомным это легко? А вот и нет! Еще одна гниющая туша оказалась на просторах города. Впрочем, бездомные животные будут Вам благодарны, за внезапно взявшийся ужин! Начните игру заново."))
+        listOfMessages.append(Status(message: "You died by losing some of your resorses. What a mess! How could you tought it would be easy? Start game from the beggining!"))
+        //Inventory use
         //11 Beer
-        listOfMessages.append(Status(message: "Делая глубокий вздох Вы открываете пластмассовую бутылку Охоты Крепкой. Под бодрящий пшик Вы уже слышите как шипение напитка внутри радостно просится Вам в горло. Облизываясь Вы тяните бутылку к своему рту, и делаете большой глоток. Пиво горькое, но Вы уже давно не чувствуете вкуса. Чувтвуется лишь скорое наступление опьянения и восстановления потеряных сил."))
+        listOfMessages.append(Status(message: "Taking a deep breath you open a plastic bottle with beer. With opening it you can already hear the sizzle of the drink inside pleasily asking you in the throat.Liting you pull the bottle to your mouth and take a big sip.The beer is bitter, but you have not felt the taste for a long time already Only the early onset of intoxication and the restoration of lost strength are felt."))
+        
         //12 Нафтизин
-        listOfMessages.append(Status(message: "От забитого носа, у Вас начинает болеть голова, и становится тяжело дышать. Доставая из кармана Нафтизин, и жадно срываете с него крышку, опрокидываете голову и резко заливаете в нос другоценное лекарство. Буквально через 10 секунд Вы вновь начинаете чувствовать запах окружающего Вас мира. Грудь наполняет безумное разнообразие запахов деревьев, цветов и чистого воздуха. Но еще через мгновенье все это меркнет на фоне Вашего собственного амбре. Ну что-ж, по крайней мере немного поправили здоровье и дышать стало проще."))
-        // 13 Использование палки
-        listOfMessages.append(Status(message: "Вооружившись палкой, Вы уже представляете опасность этому городу. Теперь проходя мимо людей, от Вас не просто шарахаются (поскольку Вы воняете, но и оглядываются. Кто знает, что у Вас на уме? Вы не смотрите по сторонам, вы медленно тащите за собой украденную тележку из ближайшего ТЦ с Вашими ВАЖНЫМИ вещами, и идете на поиски старого знакомого бомжа Степана. Вас ждет заклятый враг..."))
-        //14 Шаурма
-        listOfMessages.append(Status(message: "Бесподобная, сытная, невозможно вкусная, гиганская шаурма. Не смотря на неутихающие споры - \"Как же правильно - Шаверма, или Шаурма?\" после того как Вы пробуете ее, вопрос отпадают сразу. Только шаурма! Магическим образом помимо восстановления голода, Вы также восполняете здоровье."))
-        //15 Газель
-        listOfMessages.append(Status(message: "Пока Вы шли к этому, прошло не один час Вашей жизни. Что-ж, с покупкой и использованием ГАЗели кое что произошло. Ваш герой радостно, купив на последние деньги в заначки свеженький костюм с ботинками, уже крутит в руках ключи от конечно не новой, но все же собственной ГАЗели. Протирая рукавом зеркала заднего вида, натирая фары и похлопывая себя по пузу, он радостно прыгает за руль, проворачивает ключ в замке и... Уезжает далеко за пределы этого города, на поиски нормальной работы, нормальной жизни, своего нового начала. Спасибо что прошли до сюда, надеюсь Вам понравилось!"))
-        //16 Нельзя поссать
-        listOfMessages.append(Status(message: "Подойдя за угл дома, вы достали свой прибор, постарались потужиться, но ничего не выходит. Наверное следует делать это имея хоть какое то желание!"))
+        listOfMessages.append(Status(message: "With your clogged nose, your head starts to hurt, and it becomes hard to breath. Taking from your pocket a nasal drops, you greedily tearing off the lid from it, you topple your head and sharply pour into the nose a different medicine. Literally in 10 seconds you again begin to feel the smell of the world around you. The chest fills the insane variety of smells of trees, flowers and clean air. But after a moment all this fades against the backdrop of your own ambre. Well, at least a little bit improved health and it became easier to breathe."))
+       
+        // 13 Using the stick
+        listOfMessages.append(Status(message: "As you armed with this BATTLE STICK, you're already become a danger for this city. Now passing by people, they do not just shy from you (because you smell, but look around, who knows what's on your mind?) Do not look around, you slowly drag the stolen cart from the nearest shopping center with your IMPORTANT things, and go in search of an old friend - Stepan."))
+        
+        //14 Shaurma
+        listOfMessages.append(Status(message: "Unbelievelbe, full, impossibly delicious, giant shaurma. In a magical way, in addition to restoring hunger, you also fill your health."))
+        
+        //15 Small truck
+        listOfMessages.append(Status(message: "Victory!"))
+        //16 Impossible to take a rest
+        listOfMessages.append(Status(message: "You feel quite well, and you don't need to have a rest."))
         //17 Нельзя просить милостыню
-        listOfMessages.append(Status(message: "Усаживаясь на свое излюбленное для попрошайничества место, Вам сложно спрятать имеющееся на руках деньги и довольную рожу, словно у Вас целое состояние в кармане. Прохожие замечают это, и не торопятся поделиться с Вами мелочью. Через пару часов Вы немного проголодались, и пока сворачивались, проходящий мимо патрулю пнул Вас под зад. Печально. Но Вы этого заслужили своей жадностью!"))
-        //18 Нельзя поссать
-        listOfMessages.append(Status(message: "Глаза еще полны энергии, да и слабости никакой нет. Просто так валятся и пытаться заснуть не получается. Надо идти и попробовать занять себя чем нибудь!"))
-        //19 Нет денег на покупку
-        listOfMessages.append(Status(message: "Щенячьи глаза не в состоянии оплатить покупку. А Ваша бесконечная вонь только усугубляет ситуацию. Продавец буквально затыкает нос и отмахивается от Вас. Стоит заработать еще немного денег, прежде чем удасться получить желаемый товар!"))
+        listOfMessages.append(Status(message: "Taking a seat on your favorite place for begging, it is difficult to hide the money that you have.  Passers-by notice this, and do not hurry to share with you a trifle. A couple of hours you were a little hungry, and while folded, the passing patrol kicked you in the backside. It's sad. But you deserve it with your greed!"))
+        
+        //18 Impossible to sleep
+        listOfMessages.append(Status(message: "The eyes are still full of energy, and there is no weakness. Just so lie down and try to fall asleep it does not work. You must go and try to occupy ourselves with something!"))
+        //19 Don't have enougn money
+        listOfMessages.append(Status(message: "Puppy eyes are unable to pay for the purchase. And your infinite stench only aggravates the situation. The seller literally caulks the nose and waves it away from you. It is worth making some more money before you can get the desired product!"))
     }
 }

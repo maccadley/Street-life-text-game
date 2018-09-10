@@ -42,7 +42,7 @@ class StatusVC: UIViewController {
         hungryLbl.text = String(player.hungry)
         moneyLbl.text = String(player.money)
         textMessageField.text = messageBank.listOfMessages[player.messageStatus].textMessage
-        statusChangedLabel.text = "Здоровье изменилось на: \(player.healthChanged) голод на: \(player.hungryChanged) деньги: \(player.moneyChanged)"
+        statusChangedLabel.text = "Health changed by: \(player.healthChanged) hungry: \(player.hungryChanged) money: \(player.moneyChanged)"
         if player.health < 1 || player.hungry < 1 || player.money < 1{
             PlayerIsDeath()
         }
@@ -50,7 +50,7 @@ class StatusVC: UIViewController {
             do{
                 try realm.write {
                     player.health = 100
-                    statusChangedLabel.text = "Ваше здоровье максимальное!"
+                    statusChangedLabel.text = "You health is maximum!!"
                 }
             } catch{
                 print("Error saving \(error)")
@@ -60,7 +60,7 @@ class StatusVC: UIViewController {
             do{
                 try realm.write {
                     player.hungry = 100
-                    statusChangedLabel.text = "Ваша сытость максимальная!"
+                    statusChangedLabel.text = "You hungry is maximum!!"
                 }
             } catch{
                 print("Error saving \(error)")
@@ -95,8 +95,8 @@ class StatusVC: UIViewController {
     func newGameStart(){
         
         var textField = UITextField()
-        let alert = UIAlertController(title: "Назови себя!", message: "", preferredStyle: .alert)
-        let action = UIAlertAction(title: "Начать игру", style: .default) { (action) in
+        let alert = UIAlertController(title: "Name yourself!", message: "", preferredStyle: .alert)
+        let action = UIAlertAction(title: "Start the game", style: .default) { (action) in
             // what will happen once User hits add item
             self.player.name = textField.text!
             self.playerName.text = textField.text!
@@ -105,7 +105,7 @@ class StatusVC: UIViewController {
             self.save(category: self.player)
         }
         alert.addTextField { (alertTexField) in
-            alertTexField.placeholder = "Как зовут вашего бомжа?"
+            alertTexField.placeholder = "What's your name?"
             textField = alertTexField
         }
         alert.addAction(action)
@@ -147,8 +147,8 @@ class StatusVC: UIViewController {
         newGameButtonOutLet.isHidden = false
         
         var textField = UITextField()
-        let alert = UIAlertController(title: "Вы отъеъали!", message: "У вас отвалилась жопа и вы умерли. Начать по-новой?", preferredStyle: .alert)
-        let action = UIAlertAction(title: "да ща ща...", style: .default) { (action) in
+        let alert = UIAlertController(title: "You have died!", message: "You died in accident, would you start again?", preferredStyle: .alert)
+        let action = UIAlertAction(title: "yeah-yeah", style: .default) { (action) in
             do{
                 try self.realm.write {
                     self.realm.delete(self.player)
@@ -168,7 +168,7 @@ class StatusVC: UIViewController {
             //TODO: добавить удаление инвентаря.
         }
         alert.addTextField { (alertTexField) in
-            alertTexField.placeholder = "Кто новый бомж?"
+            alertTexField.placeholder = "What's your name, again?"
             textField = alertTexField
         }
         alert.addAction(action)

@@ -12,11 +12,11 @@ class DataService {
    static let instance = DataService()
     
     let shopInventory = [
-    Product(imageName: "beer.jpg", itemDescription: "Дешевое пиво, сильно отдающее спиртом, которое стоит недорого, но отлично дает по мозгам.", nameOfItem: "Пиво Охота", priceOfItem: 150),
-    Product(imageName: "naftizin.jpg", itemDescription: "Отлично прочищает нос, помогая наслаждаться истинным запахом этого города", nameOfItem: "Нафтизин", priceOfItem: 75),
-    Product(imageName: "Stick.png", itemDescription: "Простая деревянная палка. Странно что ее вообще продают", nameOfItem: "Палка", priceOfItem: 275),
-    Product(imageName: "shaurma.jpg", itemDescription: "Та самая. Самая лучшая. Самая вкусная... Ваш отличный обед!", nameOfItem: "Шаурма", priceOfItem: 200),
-    Product(imageName: "gazel.jpg", itemDescription: "Неплохая траспортная газель. С нее начнется Ваш бизнес", nameOfItem: "Газель", priceOfItem: 350_000)
+    Product(imageName: "beer.jpg", itemDescription: "Cheap beer. Cheep booz. Restores some health and hungry", nameOfItem: "Beer", priceOfItem: 150),
+    Product(imageName: "naftizin.jpg", itemDescription: "Perfectly clears the nose, helping to enjoy the true smell of this city", nameOfItem: "Nasal drops", priceOfItem: 75),
+    Product(imageName: "Stick.png", itemDescription: "Just a wooden stick. It's strange that it is for sale...", nameOfItem: "Stick", priceOfItem: 275),
+    Product(imageName: "shaurma.jpg", itemDescription: "Tasty shaurma, that will restore your hungry!", nameOfItem: "Shaurma", priceOfItem: 200),
+    Product(imageName: "gazel.jpg", itemDescription: "Quite well small truck. That'll help you in your business", nameOfItem: "Truck", priceOfItem: 350_000)
     ]
     
     func getItems() -> [Product] {
